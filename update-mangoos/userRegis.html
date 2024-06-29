@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - Mangoos</title>
+    <link rel="stylesheet" href="css/userRegis.css">
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .register-container h2 {
+            margin: 0 0 20px;
+            color: #4CAF50;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="password"],
+        .register-container input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .register-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .register-container button:hover {
+            background-color: #45a049;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    
+    <div class="register-container">
+        <h2>User Registration</h2>
+        <input type="text" id="userName" placeholder="User Name">
+        <input type="email" id="userEmail" placeholder="Email">
+        <input type="password" id="userPassword" placeholder="Password">
+        <button onclick="registerUser()">Register</button>
+    </div>
+    <script>
+        function registerUser() {
+            alert('Registration successful. Redirecting to login page.');
+            window.location.href = 'login.html';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.register-container');
+            container.style.animation = 'none';
+            setTimeout(() => container.style.animation = '', 10);
+        });
+    </script>
+</body>
+</html>

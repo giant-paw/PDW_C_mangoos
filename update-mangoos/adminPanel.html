@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Mangoos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .navbar button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .navbar button:hover {
+            background-color: #e53935;
+        }
+        .container {
+            padding: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            color: #4CAF50;
+        }
+        .card form input[type="text"],
+        .card form input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .card form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .card form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Admin Panel</h1>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+                <input type="text" id="productName" name="productName" placeholder="Product Name" required>
+                <input type="number" id="productPrice" name="productPrice" placeholder="Product Price" required>
+                <button type="button" onclick="addProduct()">Add Product</button>
+            </form>
+        </div>
+        <div class="card">
+            <h2>Manage Transactions</h2>
+            <!-- Placeholder for managing transactions -->
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+
+        function addProduct() {
+            const productName = document.getElementById('productName').value;
+            const productPrice = document.getElementById('productPrice').value;
+            // Add product logic to be implemented here
+            alert('Product added: ' + productName + ' - $' + productPrice);
+            document.getElementById('addProductForm').reset();
+        }
+    </script>
+</body>
+</html>
